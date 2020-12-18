@@ -127,12 +127,32 @@
 
 .this_contact{
   width: 100%;
-  height: 16%;
+  height: 13.5%;
   background-color: #d3cdbb;
+  display: flex;
+  flex-direction: row;
+}
+
+.user_dinamic{
+  width: 85%;
+  background-color: #e8e8ce;
+}
+
+.three_icon{
+  width: 15%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8e8ce;
+}
+
+.three_icon i{
+  color: grey;
 }
 .message {
   width: 100%;
-  height: 70%;
+  height: 75%;
   background-image: url(../img/mine.jpg);
 
 }
