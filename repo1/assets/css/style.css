@@ -43,6 +43,30 @@
   flex-direction: column;
 }
 
+.utente{
+  display: flex;
+  flex-direction: row;
+}
+
+.user_name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: 60%;
+}
+
 .owner{
   height: 30px;
+}
+
+.user_icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+i {
+  color: grey;
 }
