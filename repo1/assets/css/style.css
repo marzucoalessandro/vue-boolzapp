@@ -110,6 +110,15 @@
   position: relative;
   background-color: #f4f3d4;
 }
+
+.contacts{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .search{
   width: 95%;
   height: 25px;

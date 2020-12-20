@@ -25,7 +25,7 @@
 
             <div class="user_name">
 
-              <img class="owner" src="assets/img/avatar_1.jpg" alt="">
+              <img class="owner" src="assets/img/avatar_5.jpg" alt="">
               <p>nome utente</p>
 
             </div>
@@ -55,7 +55,10 @@
           </div>
 
           <!-- il quarto contenitore lavorerà con vue per gestire i ns contatti in modo dinamico -->
-          <div class="contacts">
+          <div class="contacts" v-for="key in contacts">
+
+            <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
+            <span class="name_gen"><strong>  {{key.name}} </strong> </span>
 
           </div>
 
