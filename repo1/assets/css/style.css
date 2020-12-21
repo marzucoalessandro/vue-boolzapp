@@ -155,7 +155,11 @@ body {
 .user_dinamic{
   width: 85%;
   background-color: #e8e8ce;
+  padding: 15px;
+  display: flex;
 }
+
+
 
 
 .three_icon{
