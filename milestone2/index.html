@@ -100,7 +100,8 @@
           </div>
 
           <!-- il secondo container gestirà i msg tra utenti  -->
-          <div class="message" v-for="key in contacts[active].messages">
+          <div class="message" v-for="(message, index) in contacts[active].messages">
+            <div> {{message.text}}  <br>  {{message.date}}</div>
 
           </div>
 
