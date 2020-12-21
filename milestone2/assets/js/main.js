@@ -91,8 +91,8 @@ let app = new Vue({
       ]
   },
   methods: {
-    changeContact(){
-      this.active = this.index
+    changeContact(index){
+      this.active = index;
     }
     }
 

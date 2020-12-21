@@ -56,7 +56,7 @@
 
           <!-- il quarto contenitore lavorerà con vue per gestire i ns contatti in modo dinamico -->
           <div class="container_user">
-            <div class="contacts" v-for="(key, index) in contacts" @click="changeContact()">
+            <div class="contacts" v-for="(key, index) in contacts" @click="changeContact(index)">
 
               <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
               <span class="name_gen"><strong>  {{key.name}} </strong></span>
@@ -100,7 +100,7 @@
           </div>
 
           <!-- il secondo container gestirà i msg tra utenti  -->
-          <div class="message">
+          <div class="message" v-for="key in contacts[active].messages">
 
           </div>
 
