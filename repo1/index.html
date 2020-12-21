@@ -13,9 +13,9 @@
     <!-- contenitore principale degli elementi e dell'istanza vue -->
     <div id="root">
 
-      <div class="bar"></div>
+      <!-- <div class="bar"></div> -->
 
-      <div class="display">
+      <!-- <div class="display"> -->
         <!-- all'interno poniamo due contenitori -->
 
         <!-- la prima column avrà 4 container -->
@@ -55,10 +55,14 @@
           </div>
 
           <!-- il quarto contenitore lavorerà con vue per gestire i ns contatti in modo dinamico -->
-          <div class="contacts" v-for="key in contacts">
+          <div class="container_user">
+            <div class="contacts" v-for="key in contacts">
 
-            <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
-            <span class="name_gen"><strong>  {{key.name}} </strong> </span>
+              <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
+              <span class="name_gen"><strong>  {{key.name}} </strong></span>
+
+            </div>
+
 
           </div>
 
@@ -103,7 +107,7 @@
 
 
 
-    </div>
+    <!-- </div> -->
 
 
 
