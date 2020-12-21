@@ -163,7 +163,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  
+
 }
 
 
@@ -181,7 +181,7 @@ body {
 }
 .message {
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-image: url(../img/mine.jpg);
 
 }
@@ -209,4 +209,5 @@ body {
 }
 .container_user{
   overflow-y: auto;
+  height: 400px;
 }

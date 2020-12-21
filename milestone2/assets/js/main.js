@@ -89,7 +89,15 @@ let app = new Vue({
           ],
         },
       ]
-  }
+  },
+  methods: {
+    changeContact(){
+      this.active = this.index
+    }
+    }
+
+
+
 
 
 });
