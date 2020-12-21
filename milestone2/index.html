@@ -100,8 +100,13 @@
           </div>
 
           <!-- il secondo container gestirà i msg tra utenti  -->
-          <div class="message" v-for="(message, index) in contacts[active].messages">
-            <div> {{message.text}}  <br>  {{message.date}}</div>
+          <div class="message" v-for="(message, index) in contacts[active].messages" >
+
+            <div :class="(message.status === 'sent') ? 'white' : 'green' ">
+              <p>{{message.text}}</p>
+              <p class="grey">{{message.date}}</p>
+            </div>
+
 
           </div>
 
