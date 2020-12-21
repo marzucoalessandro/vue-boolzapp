@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <title>Document</title>
+</head>
+<body>
+
+    <!-- contenitore principale degli elementi e dell'istanza vue -->
+    <div id="root">
+
+      <!-- <div class="bar"></div> -->
+
+      <!-- <div class="display"> -->
+        <!-- all'interno poniamo due contenitori -->
+
+        <!-- la prima column avrà 4 container -->
+        <div class="column1">
+
+          <div class="utente">
+
+            <div class="user_name">
+
+              <img class="owner" src="assets/img/avatar_5.jpg" alt="">
+              <p>nome utente</p>
+
+            </div>
+
+            <div class="user_icon">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+          </div>
+
+          <div class="notifiche">
+            <span class="bell">
+              <i class="far fa-bell-slash"></i>
+            </span>
+            <span class="news">
+              <p class="info"><strong>ricevi notifiche di nuovi messaggi</strong></p>
+              <a href="#">attiva notifiche desktop</a>
+            </span>
+
+          </div>
+
+          <div class="chat">
+            <input class="search" type="" placeholder="cerca o inizia una nuova chat">
+            <i class="fas fa-search lente"></i>
+          </div>
+
+          <!-- il quarto contenitore lavorerà con vue per gestire i ns contatti in modo dinamico -->
+          <div class="container_user">
+            <div class="contacts" v-for="(key, index) in contacts" @click="changeContact(index)">
+
+              <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
+              <span class="name_gen"><strong>  {{key.name}} </strong></span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <!-- la seconda column avrà tre container -->
+        <div class="column2">
+
+          <!-- il primo container gestirà in modo dinamico i contatti con vue -->
+          <div class="this_contact">
+
+            <div class="user_dinamic">
+            <img class="owner" :src=" 'assets/img/avatar' + contacts[active].avatar + '.jpg' " alt="">
+
+            <div class="details">
+
+              <span> <strong> {{ contacts[active].name}}</strong></span>
+
+              <span>Ultimo accesso oggi alle</span>
+
+            </div>
+
+
+
+
+            </div>
+
+            <div class="three_icon">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+
+            </div>
+
+          </div>
+
+          <!-- il secondo container gestirà i msg tra utenti  -->
+          <div class="message" v-for="(message, index) in contacts[active].messages" >
+
+            <div :class="(message.status === 'sent') ? 'green' : 'white' ">
+              <p>{{message.text}}</p>
+              <p class="grey">{{message.date}}</p>
+            </div>
+
+
+          </div>
+
+          <!-- il tezo container contiene gli input message  -->
+          <div class="input_message">
+
+            <i class="far fa-smile"></i>
+            <input class="write_msx" type="text" placeholder="scrivi un messaggio" v-model="newMessage" v-on:keyup.enter="addMessage">
+            <i class="fas fa-microphone"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    <!-- </div> -->
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./assets/js/main.js" charset="utf-8"></script>
+</body>
+</html>
