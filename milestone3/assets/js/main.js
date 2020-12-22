@@ -91,7 +91,7 @@ let app = new Vue({
       ],
 
       myMessage:  "",
-
+      time: dayjs()
   },
 
   methods: {
@@ -102,16 +102,17 @@ let app = new Vue({
 
 
     addMessage(){
-      this.contacts[this.active].messages.push({
-        date: '10/01/2020 15:50:00',
+        this.contacts[this.active].messages.push({
+        date: this.time,
         text: this.myMessage,
         status: 'sent'
-      }), addPcMessage(setTimeout({
+      }),  setTimeout(function(){
           this.contacts[this.active].messages.push({
           date: '10/01/2020 15:50:00',
           text: "ok",
-          status: 'sent'
-          }, 1000),
+          status: 'received'
+        })
+      }, 1000)
     }
 
   }
