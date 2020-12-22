@@ -89,11 +89,13 @@ let app = new Vue({
           ],
         },
       ],
-      newMessage: "",
+
+      myMessage:  "",
+
       newObject: {
         date: '10/01/2020 15:50:00',
-        text: this.newMessage,
-        status: 'received'
+        text: this.myMessage,
+        status: 'sent'
       }
   },
 
@@ -102,6 +104,9 @@ let app = new Vue({
       this.active = index;
     },
 
+    addMessage(){
+      this.contacts[this.active].messages.push(this.newObject)
+    }
 
   }
 });
