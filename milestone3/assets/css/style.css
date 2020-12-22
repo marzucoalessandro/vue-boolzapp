@@ -163,8 +163,8 @@ body {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-
 }
+
 
 
 .three_icon{
@@ -184,8 +184,9 @@ body {
   height: 500px;
   background-image: url(../img/mine.jpg);
   padding: 30px;
-
 }
+
+
 
 .input_message{
   display: flex;
