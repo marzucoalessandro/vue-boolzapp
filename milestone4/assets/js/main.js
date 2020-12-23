@@ -117,10 +117,25 @@ let app = new Vue({
         })
 
       }, 1000)
+    },
+
+    checkName(){
+      this.contacts.forEach(function(item){
+        if (this.item.name.includes(this.searchName)) {
+          this.contacts.visible = true;
+        } else {
+          this.contacts.visible = false
+        }
+      })
     }
+
   },
 
-    
+
+
+
+
+
 
 
 });

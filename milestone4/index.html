@@ -50,7 +50,7 @@
           </div>
 
           <div class="chat">
-            <input class="search" type="" placeholder="cerca o inizia una nuova chat" v-model="searchName">
+            <input class="search" type="" placeholder="cerca o inizia una nuova chat" v-model="searchName" v-on:keyup.enter="checkName"> 
             <i class="fas fa-search lente"></i>
           </div>
 
