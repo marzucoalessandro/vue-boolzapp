@@ -122,10 +122,11 @@ let app = new Vue({
     checkName(){
       this.contacts.forEach(function(key){
 
-        if (key.name.includes(this.searchName)) {
-          this.key.visible = true;
+
+        if (this.name.includes(this.searchName)) {
+          key.visible = true;
         } else {
-          this.key.visible = false
+          key.visible = false
         }
       })
     }
