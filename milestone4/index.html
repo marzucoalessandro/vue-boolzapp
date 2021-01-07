@@ -59,6 +59,7 @@
               <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
               <span class="name_gen"><strong>  {{key.name}} </strong></span>
 
+
             </div>
 
 
@@ -99,15 +100,20 @@
           </div>
 
           <!-- il secondo container gestirà i msg tra utenti  -->
-          <div class="message" v-for="(key, index) in contacts[active].messages">
+          <div class="message">
+            <div  v-for="(key, index) in contacts[active].messages">
 
-            <div  :class="(key.status === 'sent') ? 'green' : 'white' ">
-              <p>{{key.text}}</p>
-              <p class="grey">{{key.date}}</p>
+              <div class="message_details"  :class="(key.status === 'sent') ? 'green' : 'white' ">
+                <p>{{key.text}}</p>
+                <p class="grey">{{key.date}}</p>
+                <br>
+              </div>
+
+
             </div>
 
-
           </div>
+
 
           <!-- il tezo container contiene gli input message  -->
           <div class="input_message">
