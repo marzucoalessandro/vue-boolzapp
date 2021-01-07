@@ -91,7 +91,7 @@ let app = new Vue({
       ],
 
       myMessage:  "",
-      searchName: ""
+      searchName: "",
 
 
 
@@ -120,16 +120,27 @@ let app = new Vue({
     },
 
     checkName(){
+
+      let z = this.searchName;
+
       this.contacts.forEach(function(key){
+        // console.log(key.name);
+        let x = key.name.toString().toLowerCase();
+        // console.log(x);
+
+        let y = x.search(z);
+        // console.log(y);
+
+        if (y !== -1) {
+          key.visible = true
 
 
-        if (this.name.includes(this.searchName)) {
-          key.visible = true;
         } else {
           key.visible = false
         }
       })
     }
+
 
   },
 

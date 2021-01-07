@@ -13,9 +13,7 @@
     <!-- contenitore principale degli elementi e dell'istanza vue -->
     <div id="root">
 
-      <!-- <div class="bar"></div> -->
 
-      <!-- <div class="display"> -->
         <!-- all'interno poniamo due contenitori -->
 
         <!-- la prima column avrà 4 container -->
@@ -43,20 +41,20 @@
               <i class="far fa-bell-slash"></i>
             </span>
             <span class="news">
-              <p class="info"><strong>ricevi notifiche di nuovi messaggi</strong></p>
+              <p class="info"><strong>Ricevi notifiche di nuovi messaggi</strong></p>
               <a href="#">attiva notifiche desktop</a>
             </span>
 
           </div>
 
           <div class="chat">
-            <input class="search" type="" placeholder="cerca o inizia una nuova chat" v-model="searchName" v-on:keyup="checkName"> 
+            <input class="search" type="" placeholder="cerca o inizia una nuova chat" v-model="searchName" v-on:keyup="checkName">
             <i class="fas fa-search lente"></i>
           </div>
 
           <!-- il quarto contenitore lavorerà con vue per gestire i ns contatti in modo dinamico -->
           <div class="container_user">
-            <div class="contacts" v-for="(key, index) in contacts" @click="changeContact(index)">
+            <div class="contacts" v-if="key.visible == true" v-for="(key, index) in contacts" @click="changeContact(index)">
 
               <img :src=" 'assets/img/avatar' + key.avatar + '.jpg' " class="owner" alt="">
               <span class="name_gen"><strong>  {{key.name}} </strong></span>
@@ -101,11 +99,11 @@
           </div>
 
           <!-- il secondo container gestirà i msg tra utenti  -->
-          <div class="message" v-for="(message, index) in contacts[active].messages" >
+          <div class="message" v-for="(key, index) in contacts[active].messages">
 
-            <div :class="(message.status === 'sent') ? 'green' : 'white' ">
-              <p>{{message.text}}</p>
-              <p class="grey">{{message.date}}</p>
+            <div  :class="(key.status === 'sent') ? 'green' : 'white' ">
+              <p>{{key.text}}</p>
+              <p class="grey">{{key.date}}</p>
             </div>
 
 
