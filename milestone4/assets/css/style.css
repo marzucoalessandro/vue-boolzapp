@@ -177,6 +177,7 @@ body {
   overflow-y: scroll;
 }
 .message_details{
+  position: relative;
   margin-bottom: 20px;
   clear: both;
 }
@@ -221,14 +222,18 @@ body {
   width: 45%;
   border-radius: 10px;
   float: right;
-
 }
+
 
 
 
 .grey{
   text-align: right;
   color: grey;
+  position: absolute;
+  bottom: 10;
+  right: 10px;
+
 }
 
 .name_gen{
